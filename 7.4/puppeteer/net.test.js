@@ -44,7 +44,8 @@ describe("Netology.ru tests", () => {
 test("vacancy page", async () => {
   await page.goto("https://netology.ru/job");
   const actual = await page.$eval(
-    '[class="shared-containers-Jobs-components-Presentation-presentation-module__title--gkLaB"]',
+    // '[class="shared-containers-Jobs-components-Presentation-presentation-module__title--gkLaB"]',
+    "h1",
     (link) => link.textContent
   );
   expect(actual).toContain("Работа ");
@@ -62,7 +63,8 @@ test("expert's page", async () => {
 test("partners's page", async () => {
   await page.goto("https://netology.ru/partners");
   const actual = await page.$eval(
-    '[class="shared-containers-Partners-components-Header-header-module__title--1vdjP"]',
+    // '[class="shared-containers-Partners-components-Header-header-module__title--1vdjP"]',
+    "h1",
     (link) => link.textContent
   );
   expect(actual).toContain("Станьте партнером Нетологии");
